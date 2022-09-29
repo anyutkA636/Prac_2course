@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+
 
 int vvod_arr (int *a, int m, int n)
 {
@@ -34,16 +36,16 @@ int multi (int *A, int *B, int *C, int m, int n, int k)
     }
 }
 
-int main(int argc, int *argv[])
+int main(int argc, char *argv[])
 //int main (void)
 {
   int n, m, k;
 if (argc < 4) 
    printf("Incorrect_param\n");
 else {
-  m = *argv[1];
-  n = *argv[2];
-  k = *argv[3];
+  m = atoi(argv[1]);
+  n = atoi(argv[2]);
+  k = atoi(argv[3]);
   //scanf ("%d", &m);
   //scanf ("%d", &n);
   //scanf ("%d", &k);
