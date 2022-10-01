@@ -130,7 +130,7 @@ int main ()
     double **A, **B, **C;
     
     printf("Enter '1' - transpose, '2' - inverse matrix\n");
-    if (scanf("%d", &task) == 1) {
+    if (scanf("%d", &task) == 1 && (task == 1 || task == 2)) {
         
         if (task == 1) {
             printf("Enter M and N: ");
@@ -149,20 +149,20 @@ int main ()
                 printf("Incorrect_param\n");
         }
         
-        else if (task == 2)
-        printf("Enter M: ");
-        if ((scanf("%d", &M) == 1) && M > 0) {
-            A = dynamic_array_alloc(M, M);
-            printf("Enter matrix: \n");
-            matrix_enter(A, M, M);
-            printf("The inverse matrix M*M is: \n");
-            C = dynamic_matrix_inverse(A, M);
-            matrix_print(C, M, M);
-            dynamic_array_free(A, M);
-            dynamic_array_free(C, M);
+        else if (task == 2) {
+            printf("Enter M: ");
+            if ((scanf("%d", &M) == 1) && M > 0) {
+                A = dynamic_array_alloc(M, M);
+                printf("Enter matrix: \n");
+                matrix_enter(A, M, M);
+                printf("The inverse matrix M*M is: \n");
+                C = dynamic_matrix_inverse(A, M);
+                matrix_print(C, M, M);
+                dynamic_array_free(A, M);
+                dynamic_array_free(C, M);
         }
         else
-        printf("Incorrect_param\n");
+            printf("Incorrect_param\n");
     
     }
     else
