@@ -150,7 +150,6 @@ int main(void) {
     printf("%d\n", count_level(1, &tree));
     printf("%d\n", count_level(2, &tree));
     printf("%d\n", count_level(3, &tree));
-    printf("%d\n", count_level(90, &tree));
     free_tnode(&tree);
     return 0;
 }
